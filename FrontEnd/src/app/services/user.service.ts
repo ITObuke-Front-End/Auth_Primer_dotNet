@@ -30,6 +30,10 @@ export class UserService {
       );
   }
 
+  logout() {
+    this.user = null;
+  }
+
   getOptionsWithToken() {
     return {
       headers: new HttpHeaders({

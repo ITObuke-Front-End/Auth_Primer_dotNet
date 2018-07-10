@@ -21,6 +21,11 @@ export class UserComponent implements OnInit {
     this.userService.login(username, password).subscribe(user => this.user = user);
   }
 
+  logout() {
+    this.userService.logout();
+    this.user = this.userService.user;
+  }
+
   
 
 }

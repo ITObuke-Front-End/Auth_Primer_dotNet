@@ -1,5 +1,8 @@
 <div *ngIf="user" class="text-center my-4">
   <h1>Pozdrav, {{user.name + ' ' + user.surname}}!</h1>
+  <div class="clearfix w-25 mx-auto">
+    <button class="float-right btn btn-outline-warning" (click)="logout()">Log Out</button>
+  </div>
 
   <app-product></app-product>
 
