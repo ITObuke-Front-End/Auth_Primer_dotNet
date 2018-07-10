@@ -1,0 +1,30 @@
+<div *ngIf="user" class="text-center my-4">
+  <h1>Pozdrav, {{user.name + ' ' + user.surname}}!</h1>
+
+  <app-product></app-product>
+
+  <div *ngIf="user.role=='admins'">
+    <p>Only admins can see this!</p>
+  </div>
+</div>
+
+<div *ngIf="!user" class="my-4">
+    <div class="text-center mb-4">
+        <h1>Please, Log In!</h1>
+      </div>
+
+  <form class="clearfix w-25 mx-auto p-4 border border-info rounded" ngNativeValidate (submit)="login(username.value, password.value)">
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input class="form-control" type="text" id="username" #username tabindex="1" required/>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input class="form-control" type="password" id="password" #password tabindex="2" required />
+    </div>
+    <div class="float-right">
+      <button class="btn btn-outline-primary mr-1" type="submit" tabindex="4">Log In</button>
+    </div>
+  </form>
+</div>
